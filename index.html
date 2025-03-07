@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KVNM Photography</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .navbar {
+            backdrop-filter: blur(3.5px);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0;
+        }
+
+        .navbar-brand img {
+            height: 70px;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 80vh;
+            filter: brightness(0.8);
+            transition: filter 0.5s;
+        }
+
+        .carousel-item img:hover {
+            filter: brightness(1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #ff9900;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc7a00;
+        }
+
+        .footer {
+            background: url(./assets/img/KVNM/KVNM\ PHOTOGRAPHY\ Blanco.png) no-repeat center;
+            background-size: 20%;
+            background-color: #111;
+            position: relative;
+            padding-top: 40px;
+            color: white;
+        }
+
+        .footer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .footer .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer h5 {
+            color: #ff9900;
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            margin-right: 10px;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            text-shadow: 0px 0px 10px rgba(255, 153, 0, 0.8);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(255, 153, 0, 0.5);
+            margin-top: 20px;
+        }
+
+        .floating-contact {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(45deg, #F58529, #D33C6E, #9B4DE6);
+        }
+
+        .floating-contact i {
+            font-size: 20px;
+        }
+
+        .floating-contact:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #F58529, #D33C6E, #9B4DE6);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 50vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-item img {
+                height: 40vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-contact {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="./assets/img/KVNM/KVNM PHOTOGRAPHY Blanco.png"
+                        alt="KVNM"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://capturetheatlas.com/es/conceptos-basicos-de-la-fotografia/">Fundamentos de
+                                la fotografía</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://www.canva.com/es_mx/aprende/circulo-cromatico/">Círculo cromático</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://www.retabloweb.com/la-fotografia-caracteristicas-elementos-y-tipos/">Más
+                                información</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="mt-5 pt-5">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/img/Carousel/KVN_5587.png" class="d-block w-100" alt="Foto 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/Carousel/KVN_5575.png" class="d-block w-100" alt="Foto 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/Carousel/KVN_4927.png" class="d-block w-100" alt="Foto 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/Carousel/KVN_4959.png" class="d-block w-100" alt="Foto 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/Carousel/KVN_5043.png" class="d-block w-100" alt="Foto 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/Carousel/KVN_6062.png" class="d-block w-100" alt="Foto 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container text-center my-5">
+        <h2 class="mt-3 text-center">Capturando la pasión sobre ruedas</h2>
+        <p class="text-start">Con más de 5 años de experiencia en el mundo automotor, nos especializamos en fotografía
+            profesional de autos deportivos, resaltando cada detalle, potencia y elegancia. Desde sesiones
+            personalizadas hasta
+            cobertura de eventos, convertimos la velocidad y el diseño en arte visual.
+            Cada imagen cuenta una historia, y mi misión es inmortalizar la esencia de cada vehículo. Si buscas
+            fotografía automotriz que exalte la belleza y la esencia de los autos deportivos, aquí encontrarás la
+            combinación perfecta entre arte y velocidad.</p>
+    </section>
+
+    <section class="container">
+        <div class="gallery">
+            <img src="./assets/img/Photos/KVN_5581.png" alt="Foto 1">
+            <img src="./assets/img/Photos/KVN_5663.png" alt="Foto 2">
+            <img src="./assets/img/Photos/KVN_4417.png" alt="Foto 3">
+            <img src="./assets/img/Photos/KVN_4407.png" alt="Foto 4">
+            <img src="./assets/img/Photos/KVN_0685.jpg" alt="Foto 5">
+            <img src="./assets/img/Photos/KVN_0613.jpg" alt="Foto 6">
+            <img src="./assets/img/Photos/KVN_5246.png" alt="Foto 7">
+            <img src="./assets/img/Photos/KVN_5223.png" alt="Foto 8">
+        </div>
+    </section>
+
+    <section class="container text-center my-5">
+        <h2>Agenda tu sesión fotográfica</h2>
+        <form class="contact-form">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Correo Electrónico">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="3" placeholder="Mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </section>
+
+    <a href="https://www.instagram.com/kvnm_photography?igsh=MXV5MXk1MGtqcTNheQ%3D%3D&utm_source=qr"
+        class="floating-contact">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <footer class="footer mt-5 bg-dark text-light">
+        <div class="footer-overlay"></div>
+        <div class="container py-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-center">Más sobre KVNM Photography</h5>
+                    <p class="text-start">Fotografía automotriz profesional con más de 5 años de experiencia capturando
+                        la pasión, el diseño y la esencia de cada vehículo con una visión artística y meticulosa.</p>
+                </div>
+
+                <div class="col-md-4 mb-3 d-flex flex-column align-items-center">
+                    <h5>Sígueme</h5>
+                    <div class="social-icons d-flex gap-3">
+                        <a href="https://www.instagram.com/kvnm_photography?igsh=MXV5MXk1MGtqcTNheQ%3D%3D&utm_source=qr"
+                            class="text-light"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com/kevinmlf" class="text-light"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="text-light"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-envelope"></i> kevin.lf2405@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center py-2 border-top border-secondary">
+            <p class="mb-0">&copy; 2025 KVNM Photography - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
